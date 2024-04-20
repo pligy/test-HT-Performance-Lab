@@ -16,3 +16,8 @@ python task2.py circle.txt dots.txt
 cd task3
 python task3.py values.json tests.json report.json
 ```
+4 задание 
+```
+cd task4
+python task4.py numbers.txt
+```
