@@ -11,12 +11,12 @@ def read_circle_file(file_path):
 
 def read_dots_file(file_path):
     with open(file_path, 'r') as file:
-        points = []
+        dots = []
         for line in file:
             x, y = map(float, line.split())
-            points.append((x, y))
+            dots.append((x, y))
 
-    return points
+    return dots
 
 def dot_position(x_c, y_c, radius, x_d, y_d):
     distance_squared = (x_d - x_c) ** 2 + (y_d - y_c) ** 2
