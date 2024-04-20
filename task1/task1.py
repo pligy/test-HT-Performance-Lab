@@ -18,7 +18,7 @@ def get_path(n, m):
 if __name__ == "__main__":
     try:
         if len(sys.argv) != 3:
-            raise ValueError("write in the format - python \\path_to_file\\task1.py n m")
+            raise IOError("write in the format - python \\path_to_file\\task1.py n m")
 
         n = int(sys.argv[1])
         m = int(sys.argv[2])
@@ -27,6 +27,8 @@ if __name__ == "__main__":
             raise ValueError("n and m must be positive integers")
 
         print(*get_path(n, m), sep="")
+    except IOError as ie:
+        print("Error:", ie)
     except ValueError as ve:
         print("Error:", ve)
 
