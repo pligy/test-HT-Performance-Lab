@@ -29,17 +29,19 @@ def dot_position(x_c, y_c, radius, x_d, y_d):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("write in the format - python" +
-              "\\path_to_file\\task2.py \\path_to_file\\circle.txt \\path_to_file\\dots.txt")
-        sys.exit(1)
+    try:
+        if len(sys.argv) != 3:
+            raise IOError("write in the format - python" +
+                  "\\path_to_file\\task2.py \\path_to_file\\circle.txt \\path_to_file\\dots.txt")
 
-    circle_file = sys.argv[1]
-    dots_file = sys.argv[2]
+        circle_file = sys.argv[1]
+        dots_file = sys.argv[2]
 
-    x_c, y_c, radius = read_circle_file(circle_file)
-    dots = read_dots_file(dots_file)
+        x_c, y_c, radius = read_circle_file(circle_file)
+        dots = read_dots_file(dots_file)
 
-    for dot in dots:
-        position = dot_position(x_c, y_c, radius, dot[0], dot[1])
-        print(position)
+        for dot in dots:
+            position = dot_position(x_c, y_c, radius, dot[0], dot[1])
+            print(position)
+    except IOError as ie:
+        print("Error:", ie)
