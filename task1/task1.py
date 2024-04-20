@@ -1,5 +1,6 @@
 import sys
 
+
 def get_path(n, m):
     path = []
     current_value = 1
