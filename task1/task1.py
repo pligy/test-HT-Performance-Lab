@@ -1,3 +1,5 @@
+import sys
+
 def get_path(n, m):
     path = []
     current_value = 1
@@ -14,16 +16,17 @@ def get_path(n, m):
 
 if __name__ == "__main__":
     try:
-        n, m = map(int, input().split())
+        if len(sys.argv) != 3:
+            raise ValueError("write in the format - python \\path_to_file\\task1.py n m")
 
-        # проверка является ли число натуральным
+        n = int(sys.argv[1])
+        m = int(sys.argv[2])
+
         if n <= 0 or m <= 0:
             raise ValueError("n and m must be positive integers")
 
         print(*get_path(n, m), sep="")
     except ValueError as ve:
         print("Error:", ve)
-    except Exception as e:
-        print("Error:", e)
 
 
